@@ -1,0 +1,24 @@
+{% extends "base.html" %}
+{% block title %}Draw a Fortune · Cookie Sesh{% endblock %}
+{% block content %}
+<section class="hero">
+  <div class="eyebrow">✦ YOUR MOMENT OF POSSIBILITY ✦</div>
+  <h1>Grab Your<br><span>Fortune Today.</span></h1>
+  <p class="lead">Take a breath, trust the moment, and see what the universe has tucked away for you.</p>
+
+  <div class="fortune-card">
+    <div class="fortune-symbol">✧</div>
+    {% if fortune %}
+      <p class="fortune-text">“{{ fortune }}”</p>
+      <p class="fortune-caption">YOUR FORTUNE FOR TODAY</p>
+    {% else %}
+      <p class="fortune-text">Your next little bit of wisdom is waiting.</p>
+      <p class="fortune-caption">READY WHEN YOU ARE</p>
+    {% endif %}
+    <form action="{{ url_for('draw_fortune') }}" method="post">
+      <button class="button button-primary" type="submit">Draw a fortune <span aria-hidden="true">↗</span></button>
+    </form>
+  </div>
+  <p class="small-note">Every draw is a fresh chance to reflect.</p>
+</section>
+{% endblock %}

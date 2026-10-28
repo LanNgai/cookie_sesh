@@ -1,0 +1,36 @@
+{% extends "base.html" %}
+{% block title %}Admin · Cookie Sesh{% endblock %}
+{% block content %}
+<section class="page-heading">
+  <div class="eyebrow">THE BACK ROOM</div>
+  <h1>Fortune <span>管理</span></h1>
+  <p class="lead">Keep an eye on the collection and add new words of wisdom to the pool.</p>
+  <a class="button button-primary" href="{{ url_for('submit_fortune') }}">＋ Add a fortune</a>
+</section>
+
+<section class="content-card">
+  <div class="section-title-row">
+    <div>
+      <h2>Fortune pool</h2>
+      <p class="muted">Fortunes currently available to draw</p>
+    </div>
+    <span class="count-pill">{{ fortunes|length }} total</span>
+  </div>
+  {% if fortunes %}
+    <ol class="fortune-list">
+      {% for item in fortunes %}
+        <li>
+          <span class="list-number">{{ loop.index }}</span>
+          <div>
+            <p>{{ item["text"] }}</p>
+            <span class="muted tiny">Added {{ item["created_at"] }}</span>
+          </div>
+        </li>
+      {% endfor %}
+    </ol>
+  {% else %}
+    <p>No fortunes yet. Add the first one to get started.</p>
+  {% endif %}
+</section>
+<p class="warning-note"><strong>Development note:</strong> this admin page is not password-protected. Keep this demo local until you add authentication and authorization before deploying it publicly.</p>
+{% endblock %}

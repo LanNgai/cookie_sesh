@@ -1,0 +1,25 @@
+{% extends "base.html" %}
+{% block title %}Add a Fortune · Cookie Sesh{% endblock %}
+{% block content %}
+<section class="page-heading">
+  <div class="eyebrow">ADD TO THE POOL</div>
+  <h1>Share a little<br><span>piece of wisdom.</span></h1>
+  <p class="lead">Write a fortune that might brighten someone's day, spark a thought, or make them smile.</p>
+</section>
+<section class="form-card">
+  <form method="post" action="{{ url_for('submit_fortune') }}">
+    <label for="fortune">Your fortune</label>
+    <textarea id="fortune" name="fortune" rows="5" maxlength="500" required placeholder="A new adventure begins with one curious step..."></textarea>
+    <div class="form-footnote"><span>Keep it kind, original, and under 500 characters.</span><span id="char-count">0 / 500</span></div>
+    <button class="button button-primary" type="submit">Add to fortune pool <span aria-hidden="true">↗</span></button>
+  </form>
+  <p class="helper-text">Submitted fortunes are saved in the local SQLite database and can be drawn from the home page.</p>
+</section>
+<script>
+  const fortuneInput = document.getElementById("fortune");
+  const charCount = document.getElementById("char-count");
+  fortuneInput.addEventListener("input", () => {
+    charCount.textContent = `${fortuneInput.value.length} / 500`;
+  });
+</script>
+{% endblock %}
