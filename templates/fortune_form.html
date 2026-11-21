@@ -1,4 +1,4 @@
-{% extends "base.html" %}{% block title %}{% if fortune %}Edit{% else %}Add{% endif %} fortune · FortuneBox{% endblock %}{% block content %}
+{% extends "base.html" %}{% block title %}{% if fortune %}Edit{% else %}Add{% endif %} fortune · Cookie Sesh{% endblock %}{% block content %}
 <div class="form-card"><h1>{% if fortune %}Edit fortune{% else %}Add a fortune{% endif %}</h1>
 <form method="post"><label>Fortune text<textarea name="content" rows="4" maxlength="500" required>{{ fortune.content if fortune else '' }}</textarea></label>
 <label>Category<input name="category" value="{{ fortune.category if fortune else 'General' }}" required></label>

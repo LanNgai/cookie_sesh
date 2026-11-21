@@ -12,7 +12,7 @@ from werkzeug.security import generate_password_hash, check_password_hash
 
 app = Flask(__name__)
 app.config["SECRET_KEY"] = os.environ.get("SECRET_KEY", "fortune-box-v0-development-key")
-app.config["SQLALCHEMY_DATABASE_URI"] = "sqlite:///fortune_box.db"
+app.config["SQLALCHEMY_DATABASE_URI"] = "sqlite:///cookie_sesh.db"
 app.config["SQLALCHEMY_TRACK_MODIFICATIONS"] = False
 
 db = SQLAlchemy(app)

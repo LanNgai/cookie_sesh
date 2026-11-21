@@ -3,12 +3,12 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>{% block title %}FortuneBox{% endblock %}</title>
+  <title>{% block title %}Cookie Sesh{% endblock %}</title>
   <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
 </head>
 <body>
   <nav class="nav">
-    <a class="brand" href="{{ url_for('index') }}">🥠 FortuneBox</a>
+    <a class="brand" href="{{ url_for('index') }}">🥠 Cookie Sesh</a>
     <div class="navlinks">
       {% if current_user.is_authenticated %}
         <a href="{{ url_for('draw_fortune') }}">Draw a fortune</a>
@@ -32,6 +32,6 @@
     {% endwith %}
     {% block content %}{% endblock %}
   </main>
-  <footer>FortuneBox · A little wisdom, wrapped in a cookie.</footer>
+  <footer>Cookie Sesh · A little wisdom, wrapped in a cookie.</footer>
 </body>
 </html>

@@ -1,4 +1,4 @@
-{% extends "base.html" %}{% block title %}My fortunes · FortuneBox{% endblock %}{% block content %}
+{% extends "base.html" %}{% block title %}My fortunes · Cookie Sesh{% endblock %}{% block content %}
 <h1>My fortunes</h1><p class="muted">Your drawing history and submissions.</p>
 <h2>Draw history</h2>
 {% for draw in draws %}<article class="list-card"><p>“{{ draw.fortune.content }}”</p><small>{{ draw.fortune.category }} · {{ draw.drawn_at.strftime('%d %b %Y, %H:%M') }}</small></article>{% else %}<p class="empty">You haven't drawn a fortune yet.</p>{% endfor %}

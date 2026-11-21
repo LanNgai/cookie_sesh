@@ -1,4 +1,4 @@
-# FortuneBox — v0 baseline
+# Cookie Sesh — v0 baseline
 
 A Flask + SQLite fortune-cookie application for the DFCS H4013 CA3 project.
 

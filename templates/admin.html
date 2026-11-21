@@ -1,4 +1,4 @@
-{% extends "base.html" %}{% block title %}Admin · FortuneBox{% endblock %}{% block content %}
+{% extends "base.html" %}{% block title %}Admin · Cookie Sesh{% endblock %}{% block content %}
 <div class="admin-heading"><div><div class="eyebrow">CONTROL ROOM</div><h1>Fortune management</h1></div><a class="button" href="{{ url_for('new_fortune') }}">＋ Add fortune</a></div>
 <h2>Pending submissions <span class="count">{{ pending|length }}</span></h2>
 {% for fortune in pending %}<article class="admin-card"><div><p>{{ fortune.content }}</p><small>{{ fortune.category }} · Submitted {{ fortune.created_at.strftime('%d %b %Y') }}</small></div><div class="actions">
