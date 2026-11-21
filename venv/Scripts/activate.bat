@@ -8,7 +8,7 @@ if defined _OLD_CODEPAGE (
     "%SystemRoot%\System32\chcp.com" 65001 > nul
 )
 
-set "VIRTUAL_ENV=C:\Users\lanng\OneDrive - Technological University Dublin\Y4_Sem1\App Sec\cookie_sesh\venv"
+set "VIRTUAL_ENV=E:\Downloads\cookie_sesh\venv"
 
 if not defined PROMPT set PROMPT=$P$G
 
