@@ -1,0 +1,9 @@
+{% extends "base.html" %}{% block title %}Admin · FortuneBox{% endblock %}{% block content %}
+<div class="admin-heading"><div><div class="eyebrow">CONTROL ROOM</div><h1>Fortune management</h1></div><a class="button" href="{{ url_for('new_fortune') }}">＋ Add fortune</a></div>
+<h2>Pending submissions <span class="count">{{ pending|length }}</span></h2>
+{% for fortune in pending %}<article class="admin-card"><div><p>{{ fortune.content }}</p><small>{{ fortune.category }} · Submitted {{ fortune.created_at.strftime('%d %b %Y') }}</small></div><div class="actions">
+<form method="post" action="{{ url_for('approve_fortune', fortune_id=fortune.id) }}"><button class="small-button" type="submit">Approve</button></form>
+<form method="post" action="{{ url_for('reject_fortune', fortune_id=fortune.id) }}"><button class="small-button danger" type="submit">Reject</button></form></div></article>{% else %}<p class="empty">No pending submissions.</p>{% endfor %}
+<h2>Approved fortunes <span class="count">{{ approved|length }}</span></h2>
+{% for fortune in approved %}<article class="admin-card"><div><p>{{ fortune.content }}</p><small>{{ fortune.category }}</small></div><div class="actions"><a class="small-button secondary" href="{{ url_for('edit_fortune', fortune_id=fortune.id) }}">Edit</a><form method="post" action="{{ url_for('delete_fortune', fortune_id=fortune.id) }}"><button class="small-button danger" type="submit">Delete</button></form></div></article>{% else %}<p class="empty">No approved fortunes yet.</p>{% endfor %}
+{% endblock %}

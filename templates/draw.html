@@ -1,0 +1,6 @@
+{% extends "base.html" %}{% block title %}Your fortune · FortuneBox{% endblock %}{% block content %}
+<div class="fortune-wrap"><div class="eyebrow">YOUR FORTUNE</div><div class="cookie">🥠</div>
+<article class="fortune-paper"><div class="paper-label">A MESSAGE FOR YOU</div><p>“{{ fortune.content }}”</p><span>{{ fortune.category }}</span></article>
+<a class="button" href="{{ url_for('draw_fortune') }}">Draw another</a>
+<a class="text-link" href="{{ url_for('my_fortunes') }}">View my history</a></div>
+{% endblock %}
